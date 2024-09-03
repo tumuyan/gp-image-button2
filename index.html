@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
   <html lang="zh">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>医生图片切换</title>
+      <title>Image Button 2</title>
       <style>
           body {
               display: flex;
@@ -24,6 +24,12 @@
       <img id="doctorImage" src="doctor-off.png" alt="Doctor Image">
       <script>
           const doctorImage = document.getElementById('doctorImage');
+          doctorImage.addEventListener('touchstart', () => {
+              doctorImage.src = 'doctor-on.png';
+          });
+          doctorImage.addEventListener('touchend', () => {
+              doctorImage.src = 'doctor-off.png';
+          });
           doctorImage.addEventListener('mousedown', () => {
               doctorImage.src = 'doctor-on.png';
           });
