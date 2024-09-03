@@ -1,53 +1,42 @@
-  <!DOCTYPE html>
-  <html lang="zh">
+<!DOCTYPE html>
+<html lang="zh">
   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Image button 2</title>
-      <style>
-          body {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              height: 100vh;
-              margin: 0;
-              background-color: #f0f0f0;
-          }
-          img {
-              max-width: 100%;
-              height: auto;
-              cursor: pointer;
-          }
-		  #btn {
-				position: fixed;
-				width:100%;
-				height:100%;
-				z-index:999;
-				background:transparent;
-		  }
-      </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image button 2</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      #bg {
+        position: center;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("doctor-off.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    </style>
   </head>
-  <body id="main">
-      <img id="doctorImage" src="doctor-off.png" alt="Doctor Image">
-	  <div id="btn">
-      <script>
-          const btn = document.getElementById('main');
-          const doctorImage = document.getElementById('doctorImage');
-          btn.addEventListener('touchstart', () => {
-              doctorImage.src = 'doctor-on.png';
-          });
-          btn.addEventListener('touchend', () => {
-              doctorImage.src = 'doctor-off.png';
-          });
-          btn.addEventListener('mousedown', () => {
-              doctorImage.src = 'doctor-on.png';
-          });
-          btn.addEventListener('mouseup', () => {
-              doctorImage.src = 'doctor-off.png';
-          });
-          btn.addEventListener('mouseleave', () => {
-              doctorImage.src = 'doctor-off.png';
-          });
-      </script>
+  <body>
+
+    <div id="bg"></div>
+    <script>
+      var btn = document.getElementById("bg");
+      btn.addEventListener('touchstart', () => { bg.style.backgroundImage = "url('doctor-on.png')";});
+      btn.addEventListener('touchend', () => {bg.style.backgroundImage = "url('doctor-off.png')";});
+      btn.addEventListener('mousedown', () => {bg.style.backgroundImage = "url('doctor-on.png')";});
+      btn.addEventListener('mouseup', () => {bg.style.backgroundImage = "url('doctor-off.png')";});
+      btn.addEventListener('mouseleave', () => {bg.style.backgroundImage = "url('doctor-off.png')";});
+    </script>
   </body>
-  </html>
+</html>
